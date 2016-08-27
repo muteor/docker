@@ -5,11 +5,11 @@ RUN apk update && apk upgrade && \
     apk add ca-certificates bash && \
     rm -rf /var/cache/apk/*
 
-RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing/ >> /etc/apk/repositories && \
+RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories && \
     apk add --update \
         supervisor nginx php7 php7-fpm \
         php7-zlib php7-mcrypt php7-openssl \
-        php7-gd php7-xml php7-json && \ 
+        php7-gd php7-xml php7-json && \
     rm -rf /var/cache/apk/* && \
     mkdir /tmp/nginx && \
     mkdir -p /var/www/html && \
